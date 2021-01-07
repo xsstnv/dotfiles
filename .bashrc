@@ -1,4 +1,3 @@
-# Reconnaissance
 
 am() {
   amass enum --passive -d $1 -json $1.json
