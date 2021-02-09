@@ -4,7 +4,15 @@ am() {
 }
 
 sqlmap() {
-  python ~/tools/sqlmap*/sqlmap.py -u $1 
+  python ~/tools/sqlmap*/sqlmap.py -u $1
+}
+
+firstRun() { 
+  subfinder -silent -dL $1 | anew $2
+}
+
+secondRun() {
+  while true; do subfinder -dL $1 -all | anew $2 | httpx | nuclei -t nuclei-templates/ | notify ; sleep 3600; done
 }
 
 goclean() {
