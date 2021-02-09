@@ -1,4 +1,8 @@
+
+# Golang executables
 alias assetfinder='~/go/bin/assetfinder'
+alias subfinder='~/go/bin/subfinder'
+alias shuffledns='~/go/bin/shuffledns'
 alias chaos='~/go/bin/chaos'
 alias dalfox='~/go/bin/dalfox'
 alias ffuf='~/go/bin/ffuf'
@@ -6,7 +10,12 @@ alias gau='~/go/bin/gau'
 alias gf='~/go/bin/gf'
 alias hakrawler='~/go/bin/hakrawler'
 alias unfurl='~/go/bin/unfurl'
-alias unfurl='~/go/bin/waybackurls'
+alias waybackurls='~/go/bin/waybackurls'
+alias nuclei='~/go/bin/nuclei'
+alias httprobe='~/go/bin/gau'
+alias httpx='~/go/bin/gau'
+alias anew='~/go/bin/anew'
+alias notify='~/go/bin/notify'
 
 am() {
   amass enum --passive -d $1 -json $1.json
