@@ -1,3 +1,8 @@
+# System
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias cc='clear'
 
 # Golang executables
 alias assetfinder='~/go/bin/assetfinder'
@@ -16,3 +21,4 @@ alias httprobe='~/go/bin/gau'
 alias httpx='~/go/bin/gau'
 alias anew='~/go/bin/anew'
 alias notify='~/go/bin/notify'
+alias intercept='~/go/bin/intercept'
