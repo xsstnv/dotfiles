@@ -81,3 +81,13 @@ nuclei_file() {
 		-t exposed-tokens/ -t vulnerabilities/ -t fuzzing/ -t misconfiguration/ \
 		-t miscellaneous/dir-listing.yaml -pbar -c 50
 }
+
+httprobemore(){
+	httprobe -p http:8000 -p https:9443 -p http:8080 -p https:8443 -c 50 -t 1000
+}
+
+tamper() {
+    echo -n "$1: "; for i in GET POST HEAD PUT DELETE CONNECT OPTIONS TRACE PATCH ASDF; \
+	do echo "echo -n \"$i-$(curl -k -s -X $i $1 -o /dev/null -w '%{http_code}') \""; done \
+	| parallel -j 10 ; echo
+}
