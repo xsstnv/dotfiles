@@ -9,10 +9,12 @@ sqlmap() {
   python ~/tools/sqlmap*/sqlmap.py -u $1
 }
 
+# from @DhiyaneshDk
 firstRun() { 
   subfinder -silent -dL $1 | anew $2
 }
 
+# from @DhiyaneshDk
 secondRun() {
   while true; do subfinder -dL $1 -all | anew $2 | httpx | nuclei -t nuclei-templates/ | notify ; sleep 3600; done
 }
