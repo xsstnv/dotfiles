@@ -53,7 +53,7 @@ ffuf_quick() {
 	-of csv $2 -maxtime 360 $3
 }
 
-# ffuf deep recursive (this alias takes a wordlist as a parameter unlike ffuf_quick) / @from rez0
+# ffuf deep recursive / @from rez0
 ffuf_recursive() {
   mkdir -p recursive
   dom=$(echo $1 | unfurl format %s%d)
@@ -62,30 +62,27 @@ ffuf_recursive() {
   -o recursive/recursive_$dom.csv -of csv $3
 }
 
-# Using ffuf to find vhosts (a special wordlist I have + subs that resolve to internal IPs) / @from rez0
-ffuf_vhost() {
-	dom=$(echo $1 | unfurl format %s%d)
-	ffuf -c -u $1 -H "Host: FUZZ" -w vhosts.txt \
-	-H "X-Bug-Bounty: rez0" -ac -mc all -fc 400,404 -o vhost_$dom.csv \
-	-of csv -maxtime 120
-}
-
+# from @rez0
 nuclei_site() {
     echo $1 | nuclei -t cves/ -t exposed-tokens/ -t exposed-tokens/ \
 		-t exposed-tokens/ -t vulnerabilities/ -t fuzzing/ -t misconfiguration/ \
 		-t miscellaneous/dir-listing.yaml -pbar -c 30
 }
  
+
+# from @rez0
 nuclei_file() {
     nuclei -l $1 -t cves/ -t exposed-tokens/ -t exposed-tokens/ \
 		-t exposed-tokens/ -t vulnerabilities/ -t fuzzing/ -t misconfiguration/ \
 		-t miscellaneous/dir-listing.yaml -pbar -c 50
 }
 
+# from @rez0
 httprobemore(){
 	httprobe -p http:8000 -p https:9443 -p http:8080 -p https:8443 -c 50 -t 1000
 }
 
+# tamper http verbs / from @rez0
 tamper() {
     echo -n "$1: "; for i in GET POST HEAD PUT DELETE CONNECT OPTIONS TRACE PATCH ASDF; \
 	do echo "echo -n \"$i-$(curl -k -s -X $i $1 -o /dev/null -w '%{http_code}') \""; done \
