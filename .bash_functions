@@ -90,3 +90,8 @@ tamper() {
 	do echo "echo -n \"$i-$(curl -k -s -X $i $1 -o /dev/null -w '%{http_code}') \""; done \
 	| parallel -j 10 ; echo
 }
+
+# enumerate, filter and crawl / @from portswigger
+efc() {
+    subfinder -d $1 -silent | httpx -silent | hakrawler -plain | tr "[:punct:]" "\n" | sort -u
+}
