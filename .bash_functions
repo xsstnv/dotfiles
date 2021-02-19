@@ -91,7 +91,7 @@ tamper() {
 	| parallel -j 10 ; echo
 }
 
-# enumerate, filter and crawl / @from portswigger
+# enumerate, filter and crawl / @from bugcrowd
 efc() {
     subfinder -d $1 -silent | httpx -silent | hakrawler -plain | tr "[:punct:]" "\n" | sort -u
 }
