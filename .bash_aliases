@@ -1,7 +1,5 @@
 # System
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -a'
 alias cc='clear'
 
 # Golang executables
