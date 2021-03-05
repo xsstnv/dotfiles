@@ -20,3 +20,6 @@ alias httpx='~/go/bin/httpx'
 alias anew='~/go/bin/anew'
 alias notify='~/go/bin/notify'
 alias intercept='~/go/bin/intercept'
+
+## Other
+alias running_services='systemctl list-units  --type=service  --state=running'
