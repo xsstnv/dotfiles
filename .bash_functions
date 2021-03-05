@@ -95,3 +95,7 @@ tamper() {
 efc() {
     subfinder -d $1 -silent | httpx -silent | hakrawler -plain | tr "[:punct:]" "\n" | sort -u
 }
+
+gitleak () {
+    gitleaks --repo=https://github.com/$1/$2 --verbose --pretty | tee -A $3.txt
+}
