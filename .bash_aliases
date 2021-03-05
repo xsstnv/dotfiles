@@ -18,6 +18,7 @@ alias nuclei='~/go/bin/nuclei'
 alias httprobe='~/go/bin/gau'
 alias httpx='~/go/bin/httpx'
 alias anew='~/go/bin/anew'
+alias meg='~/go/bin/meg'
 alias notify='~/go/bin/notify'
 alias intercept='~/go/bin/intercept'
 
