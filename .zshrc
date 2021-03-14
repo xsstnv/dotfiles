@@ -53,7 +53,3 @@ fi
 
 # ZSH_THEME="strug"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
-
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
