@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -51,5 +53,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# ZSH_THEME="strug"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
